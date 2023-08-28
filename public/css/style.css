@@ -1,0 +1,1408 @@
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--full-dark-blue);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1350px;
+  width: 100%;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.sectionColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.row-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+  max-width: 410px;
+}
+
+.title > h2 {
+  font-size: 2em;
+  color: var(--white-1);
+}
+
+.title > p {
+  color: var(--white-2);
+  line-height: 23px;
+  font-size: 17px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Comfortaa', cursive;
+}
+
+/*-----------------------------------*\
+  #root
+\*-----------------------------------*/
+
+:root {
+  --blue-green: #66C5CC;
+  --yellow: #FDB91C;
+  --eerie-black_70: rgba(35,35,36, 0.7);
+  --dark-gray: #232324;
+  --lighte-gray: #919191;
+  --dark-blue: #030128;
+  --ligthe-black: #202327;
+  --full-dark-blue: #00001F;
+  --white-1: #FFFFFF;
+  --white-2: #FAFAFA;
+  --white_01: rgba(255,255,255,0.1);
+  --jet: #333438;
+
+
+  --cubic-anim: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+
+
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+
+.topHeader, .bottomHeader {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--full-dark-blue);
+  z-index: 10;
+}
+
+.bottomHeader {
+  position: absolute;
+  top: 90px;
+  left: 0;
+}
+
+.topHeader {
+  border-bottom: 1px solid var(--white_01);
+}
+
+
+.topHeaderLogo {
+  font-size: 1.2em;
+  color: var(--white-1);
+}
+
+.topHeaderLogo > h2 {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-wrapper {
+  max-width: 750px;
+  width: 100%;
+  position: relative;
+}
+
+.input-wrapper > input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 140px;
+  background: none;
+  color: var(--white-1);
+  border: 2px solid var(--white_01);
+  border-radius: 3px;
+  font-size: 1.1em;
+}
+
+.input-wrapper > input:focus {
+  border: 2px solid var(--white-1);
+}
+
+.input-wrapper > button {
+  position: absolute;
+  font-size: 1.1em;
+  top: 4px;
+  right: 4px;
+  padding: 8px 35px;
+  letter-spacing: 1.05px;
+  border-radius: 3px;
+  background: var(--blue-green);
+  border: 2px solid transparent;
+  color: var(--white-1);
+  transition: all 0.5s;
+}
+
+.input-wrapper > button:hover {
+  background: none;
+  border: 2px solid var(--blue-green);
+}
+
+.topIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.topIcons > .icon {
+  position: relative;
+  width: 33px;
+}
+
+.topIcons > .icon > i {
+  font-size: 1.7em;
+  color: var(--white-1);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.topIcons > .icon:nth-child(3) {
+  display: none;
+}
+.topIcons > .icon > i:hover {
+  color: var(--blue-green);
+}
+
+.topIcons > .icon:hover > .noll {
+  background: var(--blue-green);
+}
+
+.topIcons > .icon > i:nth-child(1) {
+  font-size: 2.1em;
+}
+
+.noll {
+  position: absolute;
+  top: -15px; right: -5px;
+  width: 15px; 
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 0.6em;
+  background: var(--lighte-gray);
+  color: var(--white-1);
+  transition: all 0.5s;
+}
+
+.bottomHeader {
+  padding: 25px 20px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.link {
+  position: relative;
+  font-size: 1.1em;
+  color: var(--white-1);
+  transition: all 0.5s;
+}
+
+.link:hover {
+  color: var(--blue-green);
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--blue-green);
+  transition: all 0.5s;
+}
+
+.link:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+.ring {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ring > h3 {
+  color: var(--white-1);
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+.ring > .ringIcon {
+  font-size: 1.8em;
+  color: var(--white-1);
+}
+
+.responsiveMenu {
+  display: none;
+}
+
+.bottomHeader.active {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  border-bottom: 1px solid var(--white_01);
+  animation: navDown 0.5s ease forwards;
+}
+
+@keyframes navDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: url('../img/hero-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.heroCont {
+  margin-top: 50px;
+  padding: 10px 0;
+  flex-flow: row nowrap;
+  gap: 50px;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 700px;
+  width: 100%;
+}
+
+.heroTitle {
+  font-size: 3.5em;
+  color: var(--white-1);
+  line-height: 65px;
+  position: relative;
+}
+
+.heroTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 5px;
+  width: 150px;
+  background: var(--blue-green);
+}
+
+.heroText {
+  color: var(--white-1);
+  line-height: 28px;
+}
+
+.heroBottom {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.heroBottom > .btn {
+  padding: 17px 40px;
+  border-radius: 30px;
+  border: 2px solid var(--white-1);
+  color: var(--white-1);
+  cursor: pointer;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  transition: all 0.5s;
+}
+
+.heroBottom > .btn:hover {
+  background: var(--blue-green);
+}
+
+.heroBottom > .btn > span {
+  font-size: 1.1em;
+}
+
+.heroBottom > .btn > i {
+  font-size: 1.3em;
+}
+
+.heroBottom > .play {
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--blue-green);
+  cursor: pointer;
+  animation: 1.5s play ease infinite;
+}
+
+.heroBottom > .play > ion-icon {
+  font-size: 1.6em;
+  color: var(--blue-green);
+}
+
+@keyframes play {
+  0% {
+    box-shadow: 0 0 0 0px var(--blue-green);
+  }
+
+  100% {
+    box-shadow: 0 0 0 15px transparent;
+  }
+}
+
+.heroBg > img {
+  max-width: 475px;
+  width: 100%;
+}
+
+
+
+/*-----------------------------------*\
+  #FEATURE
+\*-----------------------------------*/
+
+.feature {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.feature > .boxes {
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 36px;
+}
+
+.feature > .boxes > .card {
+  width: 310px;
+  display: flex;
+  align-items: center;
+  padding: 30px 25px;
+  gap: 25px;
+  background: var(--dark-blue);
+}
+
+.feature > .boxes > .card > .img {
+  width: 70px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.feature > .boxes > .card > .img > img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+
+.feature > .boxes > .card > .content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+}
+
+.feature > .boxes > .card > .content > h4 {
+  font-size: 1.2em;
+  color: var(--white-1);
+}
+
+.feature > .boxes > .card > .content > p {
+  color: var(--white-2);
+  line-height: 22px;
+}
+
+/*-----------------------------------*\
+  #FEATURED COLLECTION
+\*-----------------------------------*/
+
+
+.colectionCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 36px;
+}
+
+
+.colection > .title > .buttonsChoose {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+.colection > .title > .buttonsChoose > button {
+  font-size: 1.1em;
+  top: 4px;
+  right: 4px;
+  padding: 12px 35px;
+  letter-spacing: 1.05px;
+  border-radius: 3px;
+  background: var(--blue-green);
+  border: 2px solid transparent;
+  color: var(--white-1);
+  transition: all 0.5s;
+}
+
+.colection > .title > .buttonsChoose > button:hover {
+  background: none;
+  border: 2px solid var(--blue-green);
+}
+
+.colection > .addProduct {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  left: -100%;
+  visibility: hidden;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+.colection > .addProduct.active {
+  opacity: 1;
+  left: 0;
+  visibility: visible;
+}
+
+.colection > .addProduct > .vse {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
+  background: rgba(0,0,0, 0.7);
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.colection > .addProduct  > form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 750px;
+  width: 100%;
+  background: white;
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.colection > .addProduct  > form > .title {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.colection > .addProduct  > form > .title > h2 {
+  font-size: 1.5em;
+  font-weight: normal;
+  color: var(--ligthe-black);
+}
+
+.colection > .addProduct > form > .title > p {
+  color: rgba(35,35,36, 0.5);
+}
+
+.colection > .addProduct  > form > label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.colection > .addProduct  > form > label > span {
+  font-size: 1.1em;
+  color:rgba(0,0,0, 0.7);
+}
+
+
+.colection > .addProduct > form > label > input{
+  width: 100%;
+  padding: 15px;
+  background: none;
+  color: rgba(0,0,0, 0.7);
+  border: 2px solid rgba(35,35,36, 0.5);
+  border-radius: 3px;
+  font-size: 1.1em;
+}
+
+.colection > .addProduct  > form > label > input:focus {
+  border: 2px solid rgba(0,0,0, 0.7);
+}
+
+
+.colection > .addProduct  > form > .fileCont > .fileContChild > #file {
+  display: none;
+}
+.colection > .addProduct > form > .fileCont > .fileContChild {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+.colection > .addProduct > form > .fileCont > .fileContChild > img {
+  width: 51px;
+  height: 51px;
+  object-fit: cover;
+  background-size: cover;
+}
+
+.colection > .addProduct  > form > .fileCont > .fileContChild >.fackFile {
+  width: calc(100% - 66px);
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.1em;
+  background-color: rgba(35,35,36, 0.2);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.05);
+  color: black;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.colection > .addProduct  > form > .fileCont > .fileContChild > .fackFile:hover {
+  background-color: rgba(35,35,36, 0.4);
+}
+
+.colection > .addProduct  > form > .buttonsAdded {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.colection > .addProduct  > form > .buttonsAdded > button {
+  font-size: 1.1em;
+  padding: 15px 50px;
+  letter-spacing: 1.05px;
+  border-radius: 3px;
+  background: var(--dark-blue);
+  border: 2px solid transparent;
+  color: var(--white-1);
+  transition: all 0.5s;
+}
+
+.colection > .addProduct  > form > .buttonsAdded > button:hover {
+  background: none;
+  color: var(--dark-blue);
+  border: 2px solid var(--dark-blue);
+}
+
+.colection > .addProduct  > form > .buttonsAdded > button:nth-child(2) {
+  background: red;
+}
+.colection > .addProduct  > form > .buttonsAdded > button:hover:nth-child(2) {
+  background: none;
+  color: red;
+  border: 2px solid var(--blue-green);
+  border: 2px solid red;
+}
+
+.colection > .form {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  left: -100%;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.colection > .form.active {
+  visibility: visible;
+  opacity: 1;
+  left: 0;
+  transition: all 0.3s;
+}
+
+.colection > .form > .vse {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
+  background: rgba(0,0,0, 0.7);
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.colection > .form > form {
+  max-width: calc(700px + 200px);
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.colection > .form > form > input {
+  max-width: 700px;
+  width: 100%;
+  padding: 15px;
+  background: none;
+  color: var(--white-1);
+  border: 2px solid var(--white-1);
+  border-radius: 3px;
+  font-size: 1.1em;
+}
+
+.colection > .form > form > input:focus {
+  border: 2px solid var(--blue-green);
+}
+
+.colection > .form > form > button {
+  font-size: 1.1em;
+  padding: 15px 50px;
+  letter-spacing: 1.05px;
+  border-radius: 3px;
+  background: var(--blue-green);
+  border: 2px solid transparent;
+  color: var(--dark-blue);
+  transition: all 0.5s;
+}
+
+.colection > .form > form > button:hover {
+  background: none;
+  color: var(--white-1);
+  border: 2px solid var(--blue-green);
+}
+
+.colectionCont > .card,
+.popularProd {
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 15px;
+  border: 1px solid var(--white_01);
+}
+
+.colectionCont > .card > .img,
+.popularProd > .img {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+.colectionCont > .card > .img > img,
+.popularProd > .img > img {
+  width: 185px;
+  height: 250px;
+  background-size: cover;
+}
+
+.colectionCont > .card > .img > .icons,
+.popularProd > .img > .icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  padding: 11px 15px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  border-radius: 30px;
+  background: var(--full-dark-blue);
+  transition: all 0.3s;
+}
+
+.colectionCont > .card > .img:hover > .icons,
+.popularProd > .img:hover > .icons {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.colectionCont > .card > .img > .icons > ion-icon,
+.popularProd > .img > .icons > ion-icon {
+  font-size: 1.4em;
+  color: var(--white-2);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.colectionCont > .card > .img > .icons > ion-icon:hover,
+.popularProd > .img > .icons > ion-icon:hover {
+  color: var(--blue-green);
+}
+
+
+.colectionCont > .card > .content,
+.popularProd > .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.colectionCont > .card > .content > h3,
+.popularProd > .content > h3 {
+  font-size: 1.3em;
+  color: var(--white-1);
+  font-weight: normal;
+}
+
+.colectionCont > .card > .content > span,
+.popularProd > .content > span {
+  color: var(--blue-green);
+  font-size: 1.2em;
+}
+
+.colectionCont > .card > .content > .star,
+.popularProd > .content > .star {
+  display: flex;
+  gap: 5px;
+}
+
+.colectionCont > .card > .content > .star > i,
+.popularProd > .content .star > i {
+  cursor: pointer;
+  font-size: 1.3em;
+  color: var(--yellow);
+}
+
+
+/*-----------------------------------*\
+  #OFFER
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #POPULAR
+\*-----------------------------------*/
+
+
+.product {
+  margin: 0 20px;
+}
+
+.filtreBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 15px;
+}
+
+.filtreBtn > button {
+  padding: 5px 20px;
+  background: none;
+  font-size: 1.1em;
+  color: var(--white-2);
+  transition: all 0.5s;
+} 
+
+.filtreBtn > button:hover {
+  color: var(--blue-green);
+}
+
+.filtreBtn > button.active {
+  color: var(--blue-green);
+}
+
+.scrollBar {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
+  scroll-snap-type: inline mandatory;
+  padding-block-end: 20px;
+  margin-block-end: -20px;
+}
+
+.scrollItem {
+  min-width: 310px;
+  scroll-snap-align: start;
+}
+
+.scrollBar::-webkit-scrollbar { height: 12px; }
+
+.scrollBar::-webkit-scrollbar-track { 
+  background: transparent;
+  border: 1px solid var(--white-1);
+}
+
+.scrollBar::-webkit-scrollbar-thumb { background: var(--white-1);}
+
+.scrollBar::-webkit-scrollbar-thumb:hover { background: var(--blue-green);}
+
+.scrollBar::-webkit-scrollbar-button { width: 10%;}
+
+/*-----------------------------------*\
+  #BLOG
+\*-----------------------------------*/
+
+.blogsCont {
+  gap: 30px;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.blogsCont > .card {
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid var(--white_01);
+}
+
+.blogsCont > .card > .img {
+  width: 100%;
+  height: 250px;
+}
+
+.blogsCont > .card > .img > img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.blogsCont > .card > .content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.blogsCont > .card > .content > h3 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: var(--white-1);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.blogsCont > .card > .content > h3:hover {
+  color: var(--blue-green);
+}
+
+.blogsCont > .card > .content > .gic {
+  width: 100%;
+  height: 2px;
+  background: var(--white-1);
+}
+
+.blogsCont > .card > .content > .mounth {
+  color: var(--jet);
+  font-size: 0.9em;
+}
+
+.blogsCont > .card > .content > p {
+  color: var(--white-2);
+  line-height: 25px;
+}
+
+.blogsCont > .card > .content > button {
+  padding: 12px 35px;
+  margin: 10px;
+  border: 2px solid var(--white-1);
+  color: var(--white-1);
+  cursor: pointer;
+  font-size: 1.1em;
+  border-radius: 30px;
+  background: transparent;
+  transition: all 0.5s;
+}
+
+.blogsCont > .card > .content > button:hover {
+  background: var(--blue-green);
+  color: var(--full-dark-blue);
+  border: 2px solid var(--blue-green);
+}
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+.footer {
+  background-image: url('../img/section-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footerCont {
+  flex-flow: row wrap;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.footerCont > .card {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footerCont > .card1 {
+  width: 350px;
+}
+
+.footerCont > .card > h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: var(--white-1);
+  font-weight: normal;
+}
+
+.footerCont > .card > p {
+  color: var(--white-2);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.footerCont > .card > p:hover {
+  color: var(--blue-green);
+}
+
+.footerCont > .logo {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.footerCont > .card1 > p {
+  color: var(--white-2);
+  line-height: 25px;
+  cursor: text;
+}
+
+.footerCont > .card1 > p:hover {
+  color: var(--white-1);
+}
+
+.footerCont > .card1 > .icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footerCont > .card1 > .icons > ion-icon {
+  font-size: 1.5em;
+  color: var(--white-1);
+  cursor: pointer;
+  transition: all 0.5s
+}
+
+.footerCont > .card1 > .icons > ion-icon:hover {
+  color: var(--blue-green)
+}
+
+.finished {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--dark-blue);
+}
+
+.finishedCont {
+  flex-flow: row wrap;
+  gap: 15px;
+}
+
+.finishedCont > p {
+  color: var(--white-1);
+  font-size: 1.1em;
+}
+
+/*-----------------------------------*\
+  #BACK TO TOP
+\*-----------------------------------*/
+
+.backTop {
+  position: fixed;
+  right: 20px;
+  bottom: 800px;
+  opacity: 0;
+  z-index: 5;
+  transition: all 0.5s;
+}
+
+.backTop.active {
+  opacity: 1;
+  bottom: 20px;
+}
+
+
+.topBtn {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue-green);
+  cursor: pointer;
+  color: var(--white-1);
+  border-radius: 50%;
+  font-size: 1.8em;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.topBtn:hover {
+  box-shadow: 0 0 8px 3px rgba(102,197,204, 0.5);
+}
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+@media screen and (max-width: 850px) {
+  .input-wrapper {
+    display: none;
+  }
+
+  .topHeader {
+    position: fixed;
+    z-index: 10;
+  }
+
+  .bottomHeader {
+    display: none;
+  }
+
+  .person {
+    display: none;
+  }
+
+  .topIcons > .icon:nth-child(3) {
+    display: block;
+  }
+
+  .topHeader {
+    padding: 25px 20px;
+  }
+
+  .responsiveMenu {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    top: 0; right: 0;
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  
+  .responsiveMenu.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .responsiveMenu.active > .vse {
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  .responsiveMenu.active > .respMenu {
+    right: 0;
+    transition: 0.3s 0.5s;
+  }
+
+  .responsiveMenu > .vse {
+    width: 100%;
+    height: 100vh;
+    background: var(--white_01);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .respMenu {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    max-width: 300px;
+    width: 100%;
+    padding: 40px 20px;
+    background: var(--full-dark-blue);
+    border: 2px solid var(--white-1);
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    transition: 0.3s 0.5s;
+  }
+
+  .topRespMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topRespMenuLogo {
+    font-size: 1.2em;
+    color: var(--white-1);
+  }
+  
+  .topRespMenuLogo > h2 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .close {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--white-2);
+    transition: all 0.5s;
+  }
+
+  .close:hover {
+    border: 1px solid var(--blue-green);
+    box-shadow: 0 0 8px 3px rgba(102,197,204, 0.8);
+    background: var(--blue-green);
+  }
+
+  .close > i {
+    color: var(--white-1);
+  }
+  .close > i {
+    font-size: 1.6em;
+    color: var(--white-1);
+  }
+
+  .searchBox {
+    display: flex;
+  }
+
+  .searchBox > input {
+    width: 80%;
+    padding: 18px 10px;
+    border: 2px solid var(--white-1);
+    background: none;
+    color: var(--white-1);
+  }
+
+  .searchBtn {
+    width: 20%;
+    height: 55px;
+    border: 2px solid var(--white-1);
+    border-left: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchBtn > i {
+    font-size: 1.3em;
+    color: var(--white-1);
+  }
+
+  .respLinks {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px 0;
+    border-top: 2px solid var(--white-1);
+    border-bottom: 2px solid var(--white-1);
+  }
+
+
+  .respLink {
+    font-size: 1.1em;
+    width: 100%;
+    color: var(--white-1);
+    padding: 10px 0px;
+    transition: all 0.5s;
+  }
+
+  .respLink:hover {
+    color: var(--blue-green);
+  }
+
+  .hero {
+    background: none;
+  }
+
+  .heroCont {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    background: none;
+  }
+
+  .scrollItem {
+    min-width: 47%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .colection > .addProduct  > form > .buttonsAdded {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .heroTitle {
+    font-size: 3em;
+    line-height: normal;
+  }
+
+  .scrollItem {
+    min-width: 300px;
+  }
+
+  .footerCont {
+    flex-direction: column;
+  }
+} 
+
+@media screen and (max-width: 450px) {
+  .heroBg {
+    display: flex;
+    justify-content: center;
+  }
+  .heroBg > img {
+    width: 80%;
+  }
+
+  .heroTitle {
+    font-size: 2em;
+    line-height: normal;
+  }
+
+  .heroBottom > .btn > span{
+    font-size: 1em;
+  }
+
+  .respMenu {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .filtreBtn {
+    flex-direction: column;
+  }
+
+  .feature > .boxes > .card,
+  .popularProd
+  {
+    min-width: 100%
+  }
+
+  .blogsCont > .card {
+    width: 100%;
+  }
+
+  .footerCont > .card {
+    width: 100%;
+  }
+
+} 
